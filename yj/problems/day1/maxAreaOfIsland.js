@@ -8,12 +8,13 @@ module.exports = function maxAreaOfIsland(grid) {
     for (let x = 0; x < grid[0].length; x++) {
       if (grid[y][x] === 1) {
         // const number1OfIsland = countNumber1(grid, x, y); 임시변수라 생각되서 함수 인라인을 하였다
-        result = Math.max(result, countNumber1(grid, x, y));
+        result = Math.max(result, countNumber1(x, y));
+        // grid 매개변수는 전역 스코프라서 굳이 사용 할 필요없다
       }
     }
   }
 
-  function countNumber1(grid, x, y) {
+  function countNumber1(x, y) {
     grid[y][x] = 0;
 
     let count = 1;
