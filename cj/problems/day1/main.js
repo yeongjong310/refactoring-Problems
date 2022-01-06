@@ -32,13 +32,13 @@ function onAdd() {
   itemRow.appendChild(item);
   itemRow.appendChild(itemDivider);
 
-  items.appendChild(item);
+  items.appendChild(itemRow);
   item.scrollIntoView({ block: 'center' });
   input.value = '';
   input.focus();
 
   deleteBtn.addEventListener('click', (e) => {
-    const selected = e.currentTarget.parentNode;
+    const selected = e.currentTarget.parentNode.parentNode;
     selected.remove();
   });
 }
