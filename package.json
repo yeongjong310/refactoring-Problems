@@ -1,0 +1,23 @@
+{
+  "name": "refactoring-problems",
+  "version": "1.0.0",
+  "description": "팀원: 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeongjong310/refactoring-Problems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeongjong310/refactoring-Problems/issues"
+  },
+  "homepage": "https://github.com/yeongjong310/refactoring-Problems#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
