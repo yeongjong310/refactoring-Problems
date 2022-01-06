@@ -1,6 +1,6 @@
 const statement = require("./statement");
-const invoices = require("../../statement/invoices");
-const plays = require("../../statement/plays");
+const invoices = require("./invoices");
+const plays = require("./plays");
 
 describe("statement test", () => {
   test("statement(invoices[0], plays)", () => {
