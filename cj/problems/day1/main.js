@@ -1,40 +1,54 @@
-'use strict';
+const items = document.querySelector('.items');
+const input = document.querySelector('.footer__input');
+const addBtn = document.querySelector('.footer__button');
 
-const list = document.querySelector('.main__list');
-const form = document.querySelector('.footer__form');
-const input = document.querySelector('.form__input');
-
-let id = 0;
-
-function addItem(text) {
-  const li = document.createElement('li');
-  li.setAttribute('class', 'list__item');
-  li.setAttribute('data-id', id);
-  li.innerHTML = `
-    <span>${text}</span>
-    <i class="fas fa-trash-alt" data-id=${id}></i>
-  `;
-  id++;
-  return li;
-}
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+function onAdd() {
   const text = input.value;
   if (text === '') {
+    input.focus();
     return;
   }
-  const item = addItem(text);
 
+  const itemRow = document.createElement('li');
+  itemRow.setAttribute('class', 'item__row');
+
+  const item = document.createElement('div');
+  item.setAttribute('class', 'item');
+
+  const name = document.createElement('span');
+  name.setAttribute('class', 'item__name');
+  name.innerText = text;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class', 'item__delete');
+  deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+
+  const itemDivider = document.createElement('div');
+  itemDivider.setAttribute('class', 'item__divider');
+
+  item.appendChild(name);
+  item.appendChild(deleteBtn);
+
+  itemRow.appendChild(item);
+  itemRow.appendChild(itemDivider);
+
+  items.appendChild(item);
+  item.scrollIntoView({ block: 'center' });
   input.value = '';
   input.focus();
-  list.appendChild(item);
+
+  deleteBtn.addEventListener('click', (e) => {
+    const selected = e.currentTarget.parentNode;
+    selected.remove();
+  });
+}
+
+addBtn.addEventListener('click', () => {
+  onAdd();
 });
 
-list.addEventListener('click', (e) => {
-  const targetId = e.target.dataset.id;
-  if (targetId) {
-    const target = document.querySelector(`.list__item[data-id="${targetId}"]`);
-    target.remove();
+input.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    onAdd();
   }
 });
