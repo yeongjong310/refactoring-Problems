@@ -6,6 +6,10 @@
 
 참고서적: 리팩터링 2판
 
+관련 git link: 
+
+- 영종 : https://github.com/yeongjong310/refactor-2nd-edition
+
 일정:
 |날짜|주제|완료|
 |---|---|---|
