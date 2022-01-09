@@ -2,7 +2,7 @@ const $todos = document.querySelector(".todos");
 const $input = document.querySelector(".footer__input");
 const $addBtn = document.querySelector(".footer__button");
 
-function createTodoItem(text) {
+module.exports = function createTodoItem(text) {
   // 변수명을 더 명확하게 하기 위해 itemRow를 $todoItem으로 변수명 변경
   const $todoItem = document.createElement("li");
   $todoItem.setAttribute("class", "todo__item");
@@ -39,7 +39,7 @@ function createTodoItem(text) {
   $todoItem.appendChild($itemDivider);
 
   return $todoItem;
-}
+};
 
 function onAdd() {
   const text = $input.value;
