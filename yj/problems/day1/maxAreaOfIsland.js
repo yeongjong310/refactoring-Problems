@@ -1,6 +1,8 @@
 // 1. 프로그래밍의 구조를 쉽게 파악할 수 있도록 변경하라.
 // 2. 기능을 추가하기 쉬운 구조로 변경하라.
 
+// 가장 큰 섬의 크기를 구하는 프로그램
+
 module.exports = function maxAreaOfIsland(grid) {
   let result = 0;
 
@@ -15,9 +17,9 @@ module.exports = function maxAreaOfIsland(grid) {
   }
 
   function countNumber1(x, y) {
-    grid[y][x] = 0;
+    resetIsalnd(x, y);
 
-    let count = 1;
+    let result = 1;
     const queue = [[x, y]];
 
     while (queue.length) {
@@ -29,18 +31,29 @@ module.exports = function maxAreaOfIsland(grid) {
         [0, 1],
         [0, -1],
       ]) {
-        if (
-          grid[currentY + directionY]?.[currentX + directionX] === undefined ||
-          grid[currentY + directionY][currentX + directionX] === 0
-        )
-          continue;
+        const totalX = currentX + directionX; // 반복적으로 쓰이는 연산을 변수로 만듬
+        const totalY = currentY + directionY;
 
-        queue.push([currentX + directionX, currentY + directionY]);
-        grid[currentY + directionY][currentX + directionX] = 0;
-        count++;
+        if (isPassTheCell(totalX, totalY)) {
+          continue;
+        }
+
+        queue.push([totalX, totalY]);
+        resetIsalnd(totalX, totalY);
+        result++;
       }
     }
-    return count;
+    return result;
   }
+
+  function resetIsalnd(x, y) {
+    // 반복되는 기능을 함수로 만듬
+    grid[y][x] = 0;
+  }
+
+  function isPassTheCell(x, y) {
+    return grid[y]?.[x] === undefined || grid[y][x] === 0;
+  }
+
   return result;
 };
