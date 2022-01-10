@@ -1,4 +1,4 @@
-module.exports = function createTodoItem(text) {
+export function createTodoItem(text) {
   // 변수명을 더 명확하게 하기 위해 itemRow를 $todoItem으로 변수명 변경
   const $todoItem = document.createElement("li");
   $todoItem.setAttribute("class", "todo__item");
@@ -32,7 +32,7 @@ module.exports = function createTodoItem(text) {
   $todoItem.appendChild($itemDivider);
 
   return $todoItem;
-};
+}
 
 const $todos = document.querySelector(".todos");
 const $input = document.querySelector(".footer__input");
