@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createTodoItem('dom test 해보기') 1`] = `
+<li
+  class="todo__item"
+>
+  <div
+    class="todo__item--wrapper"
+  >
+    <button
+      class="todo__item--delete-btn"
+    >
+      <i
+        class="fas fa-trash-alt"
+      />
+    </button>
+    <span
+      class="todo__item--title"
+    >
+      dom test 해보기
+    </span>
+  </div>
+  <div
+    class="todo__item--divider"
+  />
+</li>
+`;

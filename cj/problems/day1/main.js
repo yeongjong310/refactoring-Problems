@@ -10,7 +10,7 @@ module.exports = function createTodoItem(text) {
   // 변수명을 더 명확하게 하기 위해 title을 $todoItemTitle으로 변수명 변경
   const $todoItemTitle = document.createElement("span");
   $todoItemTitle.setAttribute("class", "todo__item--title");
-  $todoItemTitle.innerText = text;
+  $todoItemTitle.textContent = text;
 
   // 변수명을 더 명확하게 하기 위해 deleteBtn을 $todoItemDeleteBtn으로 변수명 변경
   const $todoItemDeleteBtn = document.createElement("button");
@@ -38,25 +38,25 @@ const $todos = document.querySelector(".todos");
 const $input = document.querySelector(".footer__input");
 const $addBtn = document.querySelector(".footer__button");
 
-function onAdd() {
-  const text = $input.value;
-  if (text === "") {
-    $input.focus();
-    return;
-  }
+// function onAdd() {
+//   const text = $input.value;
+//   if (text === "") {
+//     $input.focus();
+//     return;
+//   }
 
-  $todos.appendChild(createTodoItem(text));
+//   $todos.appendChild(createTodoItem(text));
 
-  $input.value = "";
-  $input.focus();
-}
+//   $input.value = "";
+//   $input.focus();
+// }
 
-$addBtn.addEventListener("click", () => {
-  onAdd();
-});
+// $addBtn.addEventListener("click", () => {
+//   onAdd();
+// });
 
-$input.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    onAdd();
-  }
-});
+// $input.addEventListener("keypress", (event) => {
+//   if (event.key === "Enter") {
+//     onAdd();
+//   }
+// });
