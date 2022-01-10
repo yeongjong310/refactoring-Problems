@@ -1,7 +1,3 @@
-const $todos = document.querySelector(".todos");
-const $input = document.querySelector(".footer__input");
-const $addBtn = document.querySelector(".footer__button");
-
 module.exports = function createTodoItem(text) {
   // 변수명을 더 명확하게 하기 위해 itemRow를 $todoItem으로 변수명 변경
   const $todoItem = document.createElement("li");
@@ -21,7 +17,6 @@ module.exports = function createTodoItem(text) {
   $todoItemDeleteBtn.setAttribute("class", "todo__item--delete-btn");
   $todoItemDeleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
   $todoItemDeleteBtn.addEventListener("click", (e) => {
-    console.log;
     const selected = e.currentTarget.closest(".todo__item");
     selected.remove();
   });
@@ -33,13 +28,15 @@ module.exports = function createTodoItem(text) {
   $itemDivider.setAttribute("class", "todo__item--divider");
 
   $todoItemStruct.appendChild($todoItemTitle);
-  $todoItemStruct.scrollIntoView({ block: "center" });
-
   $todoItem.appendChild($todoItemStruct);
   $todoItem.appendChild($itemDivider);
 
   return $todoItem;
 };
+
+const $todos = document.querySelector(".todos");
+const $input = document.querySelector(".footer__input");
+const $addBtn = document.querySelector(".footer__button");
 
 function onAdd() {
   const text = $input.value;
