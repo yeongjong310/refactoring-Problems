@@ -1,4 +1,4 @@
-module.exports = function maxAreaOfIsland(grid) {
+export default function maxAreaOfIsland(grid) {
   let result = 0;
 
   for (let y = 0; y < grid.length; y++) {
@@ -48,4 +48,4 @@ module.exports = function maxAreaOfIsland(grid) {
   }
 
   return result;
-};
+}

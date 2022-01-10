@@ -1,7 +1,7 @@
 // 1. 프로그래밍의 구조를 쉽게 파악할 수 있도록 변경하라.
 // 2. 기능을 추가하기 쉬운 구조로 변경하라.
 
-module.exports = function statement(invoice, plays) {
+export default function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let statement = `Statement for ${invoice.customer}\n`;
@@ -48,4 +48,4 @@ module.exports = function statement(invoice, plays) {
   statement += `총액: ${format(totalAmount / 100)}\n`;
   statement += `적립 포인트: ${volumeCredits}점\n`;
   return statement;
-};
+}

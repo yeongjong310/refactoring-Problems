@@ -1,6 +1,6 @@
-const statement = require("./statement");
-const invoices = require("./invoices");
-const plays = require("./plays");
+import statement from "./statement";
+import invoices from "./invoices";
+import plays from "./plays";
 
 describe("statement test", () => {
   test("statement(invoices[0], plays)", () => {

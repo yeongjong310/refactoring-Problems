@@ -1,4 +1,4 @@
-const maxAreaOfIsland = require("./maxAreaOfIsland");
+import maxAreaOfIsland from "./maxAreaOfIsland";
 
 describe("maxAreaOfIsland test", () => {
   test("maxAreaOfIsland([[0,0,1,0,0,0],[0,0,0,0,0,0],[0,1,1,0,1,0],[0,1,0,0,1,1],[0,1,0,0,1,1]]) => 5", () => {
