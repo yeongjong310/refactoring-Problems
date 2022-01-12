@@ -4,7 +4,7 @@
   "description": "팀원: 2",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/yeongjong310/refactoring-Problems#readme",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^27.4.7",
     "jsdom": "^19.0.0"
   },
