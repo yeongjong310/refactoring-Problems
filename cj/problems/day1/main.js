@@ -1,4 +1,4 @@
-import { createTodoItem } from "./createTodoItem";
+import { createTodoItem } from "./createTodoItem.js";
 
 const $todos = document.querySelector(".todos");
 const $input = document.querySelector(".footer__input");
@@ -17,7 +17,6 @@ function onAdd() {
   $input.focus();
 }
 
-// TODO jest 통과하도록 수정하기.
 // TODO jest 설정방법 블로그에 문서화 하기.
 $addBtn.addEventListener("click", () => {
   onAdd();
